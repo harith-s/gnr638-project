@@ -210,7 +210,7 @@ def main():
 
         # Flush partial submission every 10 samples so a walltime kill
         # leaves a usable file behind.
-        if (i + 1) % 10 == 0 or (i + 1) == len(df):
+        if (i + 1) % 1 == 0 or (i + 1) == len(df):
             partial = pd.DataFrame(results, columns=["id", "image_name", "option"])
             partial["option"] = partial["option"].apply(lambda x: x if x in {1,2,3,4,5} else 5)
             partial.to_csv(output_csv, index=False)
